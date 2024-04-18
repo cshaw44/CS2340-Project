@@ -1,6 +1,5 @@
 package com.example.a2340project;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 
 
@@ -8,7 +7,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 
-import org.checkerframework.checker.units.qual.A;
 
 public class InputMealViewModel {
     private static InputMealViewModel instance;

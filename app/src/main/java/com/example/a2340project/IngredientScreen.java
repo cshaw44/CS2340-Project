@@ -236,6 +236,9 @@ public class IngredientScreen extends AppCompatActivity implements RecyclerViewI
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+    public ArrayList<Ingredient> getIngredientArr() {
+        return ingredientArr;
+    }
 
 
     @Override

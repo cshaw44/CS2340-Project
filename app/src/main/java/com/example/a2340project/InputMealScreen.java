@@ -82,29 +82,6 @@ public class InputMealScreen extends AppCompatActivity {
             public void onClick(View v) {
                 String meal = mealInputText.getText().toString();
                 String calories = calorieInputText.getText().toString();
-
-                BarChart bar = findViewById(R.id.chart);
-                bar.getAxisRight().setDrawLabels(false);
-                ArrayList<BarEntry> entries = new ArrayList<>();
-                entries.add(new BarEntry(1, (float) dailyCalorieGoal));
-                entries.add(new BarEntry(3, (float) dailyCalorieIntake));
-                YAxis yAxis = bar.getAxisLeft();
-                yAxis.setAxisMinimum(0f);
-                yAxis.setAxisMaximum(Math.max(dailyCalorieGoal, dailyCalorieIntake) + 200f);
-                yAxis.setAxisLineWidth(2f);
-                yAxis.setAxisLineColor(Color.BLACK);
-                yAxis.setLabelCount(5);
-                BarDataSet dataSet = new BarDataSet(entries, "Calories");
-                dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-                BarData barData = new BarData(dataSet);
-                bar.setData(barData);
-                bar.getDescription().setEnabled(false);
-                bar.invalidate();
-                List<String> list = Arrays.asList("Daily Calorie Goal", "Daily Calorie Intake");
-                bar.getXAxis().setValueFormatter(new IndexAxisValueFormatter(list));
-                bar.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
-                bar.getXAxis().setGranularity(1f);
-                bar.getXAxis().setGranularityEnabled(true);
                 dailyGoalGraph();
             }
         });
@@ -160,7 +137,6 @@ public class InputMealScreen extends AppCompatActivity {
                         mealInputText.setText("");
                         calorieInputText.setText("");
                     }
-
                 }
             }
         });

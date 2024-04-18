@@ -23,7 +23,7 @@ public class CookBook {
 
 
     public CookBook() {
-        ArrayList<Recipe> testCookBook= new ArrayList<>();
+        ArrayList<Recipe> testCookBook = new ArrayList<>();
         Map<String, Double> testIngredients = new HashMap<>();
         testIngredients.put("Fake Ingredient", 3.0);
         testCookBook.add(new Recipe("test", testIngredients));

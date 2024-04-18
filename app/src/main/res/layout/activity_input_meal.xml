@@ -9,12 +9,16 @@
 
     <TextView
         android:id="@+id/viewTitle"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
         android:text="Input Meal"
         android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvAccountInfoLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Account Information -->
@@ -22,9 +26,9 @@
         android:id="@+id/tvAccountInfoLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="Account Information"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/tvUserHeight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewTitle" />
@@ -33,8 +37,9 @@
         android:id="@+id/tvUserHeight"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginBottom="5dp"
         android:text="Height: None"
+        app:layout_constraintBottom_toTopOf="@+id/tvUserWeight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAccountInfoLabel" />
@@ -43,9 +48,9 @@
         android:id="@+id/tvUserWeight"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:text="Weight: None"
+        app:layout_constraintBottom_toTopOf="@+id/tvUserGender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUserHeight" />
@@ -54,9 +59,9 @@
         android:id="@+id/tvUserGender"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="5dp"
         android:text="Gender: None"
+        app:layout_constraintBottom_toTopOf="@+id/tvDailyCalorieIntake"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUserWeight" />
@@ -65,52 +70,52 @@
         android:id="@+id/inputMealTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="1dp"
         android:text="Input Meal and Calories"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDailyCalorieIntake" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDailyGoal" />
 
     <EditText
         android:id="@+id/inputMealName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="5dp"
         android:hint="meal"
+        app:layout_constraintBottom_toTopOf="@+id/inputCalorieEstimate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputMealTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/Error" />
 
     <EditText
         android:id="@+id/inputCalorieEstimate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:hint="calories"
         android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/addMealButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputMealName" />
+        app:layout_constraintTop_toBottomOf="@+id/inputMealName" />
 
 
     <Button
         android:id="@+id/addMealButton"
-        android:layout_width="274dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginEnd="68dp"
         android:text="Add Meal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.429"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputCalorieEstimate" />
+        app:layout_constraintTop_toBottomOf="@+id/inputCalorieEstimate" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView2"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:itemIconSize="40dp"
         app:itemTextAppearanceActiveBoldEnabled="false"
@@ -118,39 +123,37 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dailyIntakeOverMonth"
         app:menu="@menu/nav_menu" />
 
     <Button
         android:id="@+id/dailyIntakeDailyGoal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="100dp"
         android:text="Daily Intake vs. Daily Goal"
+        app:layout_constraintBottom_toTopOf="@+id/dailyIntakeOverMonth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addMealButton" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <Button
         android:id="@+id/dailyIntakeOverMonth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="106dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="106dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="1dp"
         android:text="Daily Intake Over Month"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView2"
+        app:layout_constraintStart_toStartOf="@+id/dailyIntakeDailyGoal"
         app:layout_constraintTop_toBottomOf="@+id/dailyIntakeDailyGoal" />
 
     <TextView
         android:id="@+id/tvDailyGoal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="23dp"
         android:text="Daily Calorie Goal: None"
+        app:layout_constraintBottom_toTopOf="@+id/Error"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDailyCalorieIntake" />
@@ -159,51 +162,64 @@
         android:id="@+id/tvDailyCalorieIntake"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:text="Daily Calorie Intake: None"
+        app:layout_constraintBottom_toTopOf="@+id/tvDailyGoal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUserGender" />
 
     <TextView
         android:id="@+id/Error"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Meal or Calories Contains Illegal Characters"
         android:textAlignment="center"
         android:textColor="#FF0000"
         android:textColorHint="#FF0000"
         android:visibility="gone"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="272dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputMealName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDailyGoal"
         tools:visibility="visible" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="413dp">
+        app:layout_constraintBottom_toTopOf="@+id/dailyIntakeDailyGoal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addMealButton">
 
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/graph"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/graph"
+            app:layout_constraintTop_toTopOf="@+id/graph">
+
+        </com.github.mikephil.charting.charts.BarChart>
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/graph"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginBottom="193dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/chart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        </com.github.mikephil.charting.charts.BarChart>
     </LinearLayout>
-
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/graph"
-        android:layout_width="200dp"
-        android:layout_height="121dp"
-        tools:layout_editor_absoluteX="3dp"
-        tools:layout_editor_absoluteY="417dp" />
-
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/chart"
-        android:layout_width="200dp"
-        android:layout_height="121dp"
-        tools:layout_editor_absoluteX="203dp"
-        tools:layout_editor_absoluteY="417dp">
-
-    </com.github.mikephil.charting.charts.BarChart>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

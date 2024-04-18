@@ -12,6 +12,7 @@ public class Recipe {
 
     private boolean canMake;
 
+    
     public Recipe() {
 
     }
